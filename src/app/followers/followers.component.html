@@ -1,0 +1,22 @@
+<div class="followerClassContainer">
+  <div class="row margin0">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <h3 class="text-align-center">Followers</h3>
+    </div>
+    <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 follower-card-div" *ngFor="let followerD of followerData">
+      <ng-container>
+        <mat-card class="follower-user-card">
+          <img mat-card-image [src]="followerD.avatar_url">
+          <mat-card-content>
+            <h3 class="follower-name">
+              {{followerD.login}}
+            </h3>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button class="follower-button" color="primary">More Info</button>
+          </mat-card-actions>
+        </mat-card>
+      </ng-container>
+    </div>
+  </div>
+</div>

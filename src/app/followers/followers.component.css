@@ -1,0 +1,27 @@
+.follower-user-card{
+    background-color: #eaf0f6;
+}
+.follower-button{
+    background-color: #208d90;
+    color: white;
+}
+.follower-name{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-transform: capitalize;
+    pointer-events: none;
+}
+.follower-card-div{
+    padding: 1%;
+    transition: 0.3s;
+}
+
+.follower-card-div:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.follower-card-div:hover .follower-user-card{
+    box-shadow: 0 3px 1px -2px #6c757d, 0 2px 2px 0 #6c757d, 0 1px 5px 0 #6c757d;
+    transition: 0.3s;
+}
