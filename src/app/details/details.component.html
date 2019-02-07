@@ -1,21 +1,43 @@
-<div class="detailsClassContainer">
-  <div class="row">
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+<div class="detailsClassContainer height100">
+  <div class="row height100 margin0">
+    <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
       <h3 class="text-align-center">User Detail</h3>
-    </div>
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" *ngIf="userDetailsData">
+    </div> -->
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 height100" *ngIf="userDetailsData">
       <ng-container>
-            <div class="row">
-              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-              <img mat-card-image [src]="userDetailsData.avatar_url" >
+        <div class="row height100">
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 img-avatar-div ">
+          <img class="avatarImage" [src]="userDetailsData.avatar_url" >
+          <p class="text-align-center mt-3 join-info" *ngIf="userJoinDate"><span>Joined : {{userJoinDate}}</span></p>
+          </div>
+          <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 info-div">
+            <h3 class="details-name">
+              {{userDetailsData.name}}
+            </h3>
+            <small>{{userDetailsData.location}}<span><img src="{{dynamicImageUrl}}icons/location.png" class="locationPng"></span></small>
+            <hr/>
+            <p><img src="{{dynamicImageUrl}}icons/mail.png" class="pngLogo">{{userDetailsData.email ? userDetailsData.email : "No email data available"}}</p>
+            <p><img src="{{dynamicImageUrl}}icons/blog.png" class="pngLogo">{{userDetailsData.blog ? userDetailsData.blog : "No blog data available"}}</p>
+            <p><img src="{{dynamicImageUrl}}icons/global.png" class="pngLogo">{{userDetailsData.bio ? userDetailsData.bio : "No bio data available"}}</p>
+            <p><img src="{{dynamicImageUrl}}icons/company.png" class="pngLogo">{{userDetailsData.company ? userDetailsData.company : "No company data available"}}</p>
+            <button mat-button class="details-button" color="primary" (click)="goToFollowersPage(userDetailsData.login)">See followers</button>
+            <hr/>
+            <div class="d-flex justify-content-around mb-3 countDiv">
+              <div class="p-2">
+                <h4>Followers</h4>
+                <h5 class="text-align-center">{{userDetailsData.followers?userDetailsData.followers:"0"}}</h5>
               </div>
-              <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
-                <h3 class="details-name">
-                  {{userDetailsData.login}}
-                </h3>
-                <button mat-button class="details-button" color="primary" (click)="goToFollowersPage(userDetailsData.login)">Followers</button>
+              <div class="p-2">
+                <h4>Following</h4>
+                <h5 class="text-align-center">{{userDetailsData.following?userDetailsData.following:"0"}}</h5>
+              </div>
+              <div class="p-2">
+                <h4>Repos</h4>
+                <h5 class="text-align-center">{{userDetailsData.repos?userDetailsData.repos:"0"}}</h5>
               </div>
             </div>
+          </div>
+        </div>
       </ng-container>
     </div>
   </div>

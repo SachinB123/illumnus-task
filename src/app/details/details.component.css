@@ -1,0 +1,48 @@
+.detailsClassContainer{
+    background: linear-gradient(135deg, #ebe9f9 0%,#d8d0ef 50%,#cec7ec 51%,#c1bfea 100%); 
+}
+.details-name{
+    color: tomato;
+}
+small{
+    display: block;
+    line-height: 1.428571;
+    color: #6c7882;
+}
+.locationPng{
+    width: 1.8%;
+    margin-bottom: 0.8%;
+    margin-left: 0.2%;
+    opacity: 0.5;
+}
+.pngLogo{
+    width: 3%;
+    margin-right: 2%;
+}
+.avatarImage{
+    width: 100%;
+    border-radius: 6px;
+}
+.details-button{
+    background-color: darkslategray;
+    color: white;
+}
+.img-avatar-div{
+    background-color: black;
+    padding: 2%;
+}
+.info-div{
+    padding: 2%;
+}
+.join-info{
+    background-color: lightslategray;
+    color: white;
+    padding: 3%;
+    border-radius: 6px;
+}
+.countDiv{
+    border-radius: 6px;
+    /* background-color: cornflowerblue; */
+    color: #dee2e6;
+    background: linear-gradient(135deg, #146180 0%,#2cafe3 100%)
+}

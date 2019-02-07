@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injector } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PostGetService} from '../post-get.service';
 
@@ -11,8 +11,14 @@ export class DetailsComponent implements OnInit {
 
   user:any;
   userDetailsData: any;
+  userJoinDate:any;
 
-  constructor(private gservice: PostGetService, private router : Router, private route: ActivatedRoute) { 
+  dynamicImageUrl :any;
+
+  constructor(private gservice: PostGetService, private router : Router, private route: ActivatedRoute, private injector: Injector) { 
+    const A = this.injector.get('GlobalVar');
+    this.dynamicImageUrl = A.imageUrl;
+
     this.route.queryParamMap. subscribe((params)=>{
       this.user = params.get('userName');
     });
@@ -26,6 +32,7 @@ export class DetailsComponent implements OnInit {
     this.gservice.getUserDetails(this.user).subscribe((data:any)=>{
       console.log("data in details component :: ", data);
       this.userDetailsData = data;
+      this.userJoinDate = new Date(this.userDetailsData.created_at).toUTCString();console.log("date :: ", this.userJoinDate);
     });
   }
 

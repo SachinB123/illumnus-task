@@ -11,6 +11,10 @@ import { EntryComponent } from './entry/entry.component';
 import { DetailsComponent } from './details/details.component';
 import { FollowersComponent } from './followers/followers.component';
 
+export const GlobalVariable = Object.freeze({
+  imageUrl: 'assets/',
+});
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +32,7 @@ import { FollowersComponent } from './followers/followers.component';
     MatCardModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [{ provide: 'GlobalVar', useValue: GlobalVariable}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
