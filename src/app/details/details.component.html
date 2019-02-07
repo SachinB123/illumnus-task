@@ -12,9 +12,9 @@
           </div>
           <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 info-div">
             <h3 class="details-name">
-              {{userDetailsData.name}}
+              {{userDetailsData.name ? userDetailsData.name : "No name available"}}
             </h3>
-            <small>{{userDetailsData.location}}<span><img src="{{dynamicImageUrl}}icons/location.png" class="locationPng"></span></small>
+            <small>{{userDetailsData.location ? userDetailsData.location : "Location unavailable"}}<span><img src="{{dynamicImageUrl}}icons/location.png" class="locationPng"></span></small>
             <hr/>
             <p><img src="{{dynamicImageUrl}}icons/mail.png" class="pngLogo">{{userDetailsData.email ? userDetailsData.email : "No email data available"}}</p>
             <p><img src="{{dynamicImageUrl}}icons/blog.png" class="pngLogo">{{userDetailsData.blog ? userDetailsData.blog : "No blog data available"}}</p>
